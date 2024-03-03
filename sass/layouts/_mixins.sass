@@ -1,0 +1,138 @@
+@use '../base/variables'
+
+// *** Mixins *** //
+
+@mixin customBorder($type, $color, $size: 1px)
+    border: $size $type $color
+
+@mixin display_pattern($display: flex, $justify: center, $align: center)
+    display: $display
+    justify-content: $justify
+    align-items: $align
+
+@mixin backgroundConfig
+    background-size: cover
+        
+    height: 100%
+    padding: 0 10%
+
+    display: flex
+    justify-content: center
+    align-items: center
+    
+
+@mixin fontSize($size)
+    font-size: $size
+    
+@mixin navLinksHover
+    &::before
+        content: ''
+
+        position: absolute
+        left: 0
+        bottom: -3px
+
+        width: 100%
+        height: 2px
+        background: variables.$spanColor
+        
+        transform: scaleX(0)
+        transform-origin: right
+        transition: transform .3s ease
+
+    &:hover::before
+        transform: scaleX(1)
+        transform-origin: left
+
+    &:hover
+        color: variables.$linksNavHover
+
+@mixin cardsHover
+    @include customBorder(solid, variables.$borderTitleCard, 2px)
+    box-shadow: 0 5px 0 variables.$borderTitleCard
+    transform: translate(0, -10px)
+
+// *** Extend *** //
+
+%btn-config
+    color: variables.$boxMartialArt
+    background-color: variables.$lineMartialArt
+
+    @include customBorder(solid, variables.$lineMartialArt)
+    border-radius: .5rem 
+
+    padding: .7em .5em
+    display: inline-block
+    transition: ease .3s
+
+    &:hover
+        color: variables.$bannerParagrapher
+        @include customBorder(solid, #fff)
+        background: transparent
+
+// *** Buttons *** //
+
+#login-btn
+    transition: .3s
+
+    &:hover
+        color: variables.$linksNavHover
+
+.register-btn
+    padding: 1rem
+    background: variables.$btnRegisterBg
+    border-radius: 1rem 1rem 0 20px
+    border: 1px solid transparent
+    transition: .3s
+
+    &:hover
+        background-color: variables.$btnRegisterHover
+        border: 1px solid variables.$btnRegisterBg
+
+.banner-link
+    margin-top: 2rem 
+
+    &-btn
+        background: transparent
+        color: variables.$linksNavHover
+        font-weight: bold
+        
+        transition: .3s
+
+        padding: 0.8rem 1rem
+        border: 1px solid #f00
+
+        &:hover
+            border: 1px solid #fff
+            color: #fff            
+
+.infoMartialArt-btn
+    @extend %btn-config
+
+.aboutUs-btn
+    @extend %btn-config
+    font-size: 1em
+    font-weight: bold
+
+.btn-contact
+    transition: .3s
+    cursor: pointer
+
+    &:hover
+        background: variables.$lineMartialArt
+        color: variables.$titleColor
+
+// *** Icons links *** //
+
+.aboutUs-content-links
+    @include display_pattern(flex, center, flex-start)
+    gap: 2rem
+
+    a
+        @include fontSize(1.5em)
+        transition: .2s
+        color: variables.$bannerParagrapher
+
+        &:hover
+            color: variables.$linksNavHover
+            

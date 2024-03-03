@@ -1,0 +1,14 @@
+@use '../base/variables'
+@use '../base/base-mixins'
+@import 'mixins'
+
+footer
+    @include display_pattern
+    padding: 1rem
+
+    background: variables.$footerBg
+    color: variables.$titleColor
+
+    ul
+        margin: 1rem 0
+        

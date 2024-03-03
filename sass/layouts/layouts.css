@@ -1,0 +1,190 @@
+.sidebar-responsive {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(7, 7, 7, 0.921);
+}
+.sidebar-responsive-list {
+  width: 100%;
+  padding: 1rem;
+}
+.sidebar-responsive-list #closeSidebarIcon {
+  font-size: 1.7rem;
+}
+.sidebar-responsive-list-link {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+
+#login-btn {
+  transition: 0.3s;
+}
+#login-btn:hover {
+  color: rgb(255, 0, 0);
+}
+
+.register-btn {
+  padding: 1rem;
+  background: rgb(243, 22, 22);
+  border-radius: 1rem 1rem 0 20px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+.register-btn:hover {
+  background-color: rgba(243, 22, 22, 0.2);
+  border: 1px solid rgb(243, 22, 22);
+}
+
+.banner-link {
+  margin-top: 2rem;
+}
+.banner-link-btn {
+  background: transparent;
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  transition: 0.3s;
+  padding: 0.8rem 1rem;
+  border: 1px solid #f00;
+}
+.banner-link-btn:hover {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/mainBackground.jpg") center no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+.header-content {
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-color: rgba(250, 250, 250, 0.034);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1333333333);
+  padding: 1rem 10%;
+}
+.header-content-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+.header-content-title-icon, .header-content-title h1 {
+  font-size: 2rem;
+  color: rgb(240, 240, 240);
+}
+.header-content-title span {
+  font-size: 3rem;
+  color: rgb(244, 10, 10);
+  font-style: italic;
+}
+.header-content .links-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  font-size: 1.1em;
+}
+.header-content .links-list li > a {
+  color: rgb(244, 244, 244);
+  position: relative;
+  transition: 0.3s;
+}
+.header-content .links-list li > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: rgb(244, 10, 10);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.header-content .links-list li > a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header-content .links-list li > a:hover {
+  color: rgb(255, 0, 0);
+}
+@media (max-width: 800px) {
+  .header-content .links-list li > a {
+    display: none;
+  }
+}
+.header-content .user-stuff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.1em;
+}
+.header-content .user-stuff li > a {
+  color: rgb(244, 244, 244);
+}
+@media (max-width: 800px) {
+  .header-content .user-stuff {
+    display: none;
+  }
+}
+.header-content #icon-responsive {
+  display: none;
+  font-size: 1.3rem;
+}
+@media (max-width: 800px) {
+  .header-content #icon-responsive {
+    display: block;
+  }
+}
+.header .banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0 10%;
+  color: #fff;
+  height: 80%;
+}
+@media (max-width: 800px) {
+  .header .banner-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+.header .banner-content-texts-title {
+  font-size: 4.5rem;
+  width: 40rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.header .banner-content-texts-title span {
+  color: rgb(244, 10, 10);
+}
+@media (max-width: 800px) {
+  .header .banner-content-texts-title {
+    text-align: center;
+  }
+}
+@media (max-width: 430px) {
+  .header .banner-content-texts-title {
+    font-size: 2rem;
+  }
+}
+.header .banner-content-texts-paragraph {
+  white-space: pre;
+  color: rgb(204, 204, 204);
+  line-height: 1.5em;
+  margin: 0.5rem 0;
+}/*# sourceMappingURL=layouts.css.map */

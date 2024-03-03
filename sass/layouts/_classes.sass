@@ -1,0 +1,84 @@
+@use '../base/variables'
+@use '../base/base-mixins'
+@import 'mixins'
+
+#classes-container
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../images/classesBg.jpg') top center fixed no-repeat
+    background-size: cover 
+    height: 100%
+
+    padding: 0 10%
+
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    
+    .classes-content
+        &-title
+            background-color: transparent
+            border: 1px solid variables.$titleColor
+
+
+            color: variables.$titleColor
+            text-transform: uppercase
+            text-align: center
+            letter-spacing: 2px
+            @include fontSize(1.5em)
+
+            padding: 1rem 0
+            box-shadow: 0 5px 0 #ffffff
+
+            width: 20rem
+            margin: 0 auto
+
+    .classes-cards
+        display: flex
+        justify-content: center
+        gap: 1rem
+        flex-wrap: wrap
+
+        &-card
+            width: 300px
+            border-radius: 15px
+            overflow: hidden
+
+            margin-top: 2rem 
+            color: #ffffff
+            text-align: center
+
+            @include customBorder(solid, #fff, 2px)
+            padding: 0.5rem
+            transition: .5s ease
+
+            &:hover
+                @include cardsHover
+                img
+                    transform: scale(1.1)
+                    filter: grayscale(0%)
+
+                    
+
+            img
+                width: 100%
+                height: auto
+
+                border-radius: 15px
+                transition: .5s ease
+
+                filter: grayscale(50%)
+
+            &-nameArt
+                padding: 0.5rem
+                margin: 0.5rem
+
+                border-radius: 1rem
+                border-bottom: 5px solid variables.$borderTitleCard
+
+                background-color: variables.$cardTitleBg
+
+                h1
+                    text-transform: uppercase
+                    font-weight: bold
+                    color: variables.$titleColor
+                    @include fontSize(1.3em)

@@ -1,0 +1,89 @@
+@use '../base/variables'
+@use '../base/base-mixins'
+@import 'mixins'
+
+@for $i from 1 through 6
+    #background-#{$i}
+        background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../images/bg-#{$i}.jpg') top center fixed no-repeat
+        flex-wrap: wrap
+        @include backgroundConfig
+
+    .content-area
+        display: flex
+        width: 60rem
+
+        color: variables.$titleColor
+        background: variables.$boxMartialArt
+
+        margin: 2rem 0
+        padding: 2rem
+
+        @include base-mixins.mobile-responsivity
+            flex-direction: column
+            justify-content: center
+            align-items: center
+
+        &-text
+            @include display_pattern(flex, space-evenly, flex-start)
+            flex-direction: column
+            gap: 2rem
+            
+            padding: 2rem
+            width: 50%
+
+            @include base-mixins.mobile-responsivity
+                text-align: center
+                align-items: center
+
+            &-border
+                border-bottom: 2px solid variables.$lineMartialArt
+
+                h1
+                    @include fontSize(3em) 
+
+                    &::first-letter
+                        color: variables.$lineMartialArt
+                        @include fontSize(1.5em)
+
+            &-schedule
+                display: grid
+                gap: .5rem
+
+                h3
+                    @include fontSize(1.7em)
+                    color: variables.$lineMartialArt
+
+                &-days
+                    font-size: 1.2em
+
+                &-time
+                    display: flex
+                    gap: 1rem
+
+                    div
+                        color: variables.$bannerParagrapher
+                        padding: 4px
+
+                        border-radius: .5rem 
+                        @include customBorder(solid, variables.$lineMartialArt)
+                        
+        
+        @for $i from 1 through 6
+            .content-area-image-#{$i}
+                background: url('../images/image-#{$i}.jpg') top center no-repeat
+                background-size: cover
+                
+                width: 50%
+                height: 20rem
+                position: relative
+
+                box-shadow: 0 5px 0 variables.$bannerParagrapher
+                @include customBorder(solid, variables.$bannerParagrapher)
+
+                @include base-mixins.mobile-responsivity
+                    width: 80%
+
+
+
+
+        
